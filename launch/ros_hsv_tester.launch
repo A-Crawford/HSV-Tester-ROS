@@ -1,0 +1,3 @@
+<launch>
+    <node name='hsv_tester' pkg='ros_hsv_tester' type='hsv_tester_node.py' output='screen'/>
+</launch>
