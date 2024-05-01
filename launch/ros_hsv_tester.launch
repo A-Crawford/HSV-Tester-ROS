@@ -1,3 +1,5 @@
 <launch>
     <node name='hsv_tester' pkg='ros_hsv_tester' type='hsv_tester_node.py' output='screen'/>
+    <arg name='camera_topic'/>
+    <param name="hsv_tester/camera_topic" value="$(arg camera_topic)"/>
 </launch>

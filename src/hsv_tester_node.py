@@ -10,7 +10,7 @@ def nothing(x):
     pass
 
 class HSVTester():
-    def __init__(self):
+    def __init__(self, topic):
         
         # Create a window
         cv2.namedWindow('image')
@@ -36,7 +36,7 @@ class HSVTester():
         # Define Pubs, Subs and Service clients
         # Define Service proxy
         # self.image_sub = rospy.Subscriber('/camera/color/image_raw', Image, self.HSVTest)
-        self.image_sub = rospy.Subscriber('/usb_cam/image_raw', Image, self.HSVTest)
+        self.image_sub = rospy.Subscriber(str(topic), Image, self.HSVTest)
         
         # Bridge needed for OpenCV to work with ROS
         self.bridge = CvBridge()
@@ -85,6 +85,8 @@ class HSVTester():
 
 if __name__ == '__main__':
     rospy.init_node('HSV_Tester', anonymous=True)
-    ic = HSVTester()
+    topicData = rospy.get_param('/hsv_tester/camera_topic')
+    ic = HSVTester(topic=topicData)
     while not rospy.is_shutdown():
         rospy.spin()
+        
