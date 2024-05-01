@@ -86,6 +86,7 @@ class HSVTester():
 if __name__ == '__main__':
     rospy.init_node('HSV_Tester', anonymous=True)
     topicData = rospy.get_param('/hsv_tester/camera_topic')
+    rospy.loginfo(f"Taking image data from '{topicData}' topic")
     ic = HSVTester(topic=topicData)
     while not rospy.is_shutdown():
         rospy.spin()
