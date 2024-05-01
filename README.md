@@ -1,6 +1,6 @@
 # ROS HSV Tester
 
-Simple ROS node for displaying affect of HSV values on a static image pulled from the 'usb_cam/image_raw' topic.
+Simple ROS node for displaying affect of HSV values on a static image pulled from a specified ROS image topic. Defaults to '/usb_cam/image_raw'.
 </br>
 
 ## Install
