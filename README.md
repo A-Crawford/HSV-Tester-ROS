@@ -21,6 +21,13 @@ $ source devel/setup.bash
 ## Starting the node
 
 ```bash
-roslaunch ros_hsv_tester ros_hsv_tester.launch
+roslaunch ros_hsv_tester ros_hsv_tester.launch <args>
 ```
 
+#### Args
+`camera_topic` used for specifying the topic for the node to subscribe to. Defaults to `/usb_cam/image_raw/`.
+
+Example usuage:
+```bash
+roslaunch ros_hsv_tester ros_hsv_tester.launch camera_topic:="/camera/color/image_raw"
+```
